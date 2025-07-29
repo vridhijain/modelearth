@@ -16,12 +16,40 @@ WindowsOS
 	env\Scripts\activate
 	npx @anthropic-ai/claude-code
 
-Next, in Claude CLI run:
+For Claude: We've forked the anything-llm repo created by Mintplex Labs and renamed it [earthscape](https://github.com/modelearth/earthscape). Here's their documentation: [docs.anythingllm.com](https://docs.anythingllm.com/)
+
+
+In Claude CLI run:
 
 	yarn setup with 10 minute timeout
 	cp server/.env.example server/.env
 
-Copy the #4 below and after here.
+<!-- #4 in BARE_METAL.md -->
 
-For Claude: We've forked the anything-llm repo created by Mintplex Labs and renamed it [earthscape](https://github.com/modelearth/earthscape). 
-Here's their documentation: [docs.anythingllm.com](https://docs.anythingllm.com/)
+	Create a "storage" folder and set the STORAGE_DIR path in server/.env to
+	use it via an absolute filesystem path with no trailing slash.
+
+<!-- #5 in BARE_METAL.md -->
+
+	Select one of the VITE_BASE_API options in frontend/.env based on the current hosting URL.
+
+Start site after building and copying dist into server/public
+
+	cd frontend && yarn build
+	cd .. && mkdir -p server/public && cp -R frontend/dist/* server/public/
+
+Migrate and prepare database, boot server in production and in another collection
+
+	cd server && npx prisma generate --schema=./prisma/schema.prisma
+	cd server && npx prisma migrate deploy --schema=./prisma/schema.prisma
+	cd server && NODE_ENV=production node index.js &
+	cd collector && NODE_ENV=production node index.js & cd ..
+
+	Add to .gitignore: settings.local.json, storage
+	
+Claude will use the cmds in claude.md
+
+	Install or update submodules
+
+
+View at [localhost:3001](http://localhost:3001)
