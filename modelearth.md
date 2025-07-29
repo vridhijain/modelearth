@@ -18,10 +18,10 @@ WindowsOS
 
 Next, in Claude CLI run:
 
-	yarn setup
+	yarn setup with 10 minute timeout
 	cp server/.env.example server/.env
 
-Copy the #4 below and after here, then omit the following blue-boxed BARE_METAL.md load in index.html
+Copy the #4 below and after here.
 
 For Claude: We've forked the anything-llm repo created by Mintplex Labs and renamed it [earthscape](https://github.com/modelearth/earthscape). 
 Here's their documentation: [docs.anythingllm.com](https://docs.anythingllm.com/)
