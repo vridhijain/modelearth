@@ -47,6 +47,51 @@ yarn prisma:seed            # Seed database with initial data
 yarn prisma:reset           # Reset database and re-migrate
 ```
 
+### Pull in submodules (one time):
+
+	git submodule add https://github.com/ModelEarth/localsite localsite && 
+	git commit -m "localsite submodule"
+	git submodule add https://github.com/modelearth/team team
+	git commit -m "team submodule"
+	git submodule add https://github.com/modelearth/realitystream realitystream
+	git commit -m "realitystream submodule"
+	git submodule add https://github.com/modelearth/feed feed
+	git commit -m "feed submodule"
+	git submodule update --init --recursive
+
+**Static Serving**: Submodules are automatically served as static directories at `http://localhost:3001/[submodule-name]/` when present in the repository root. Configuration is handled by `submodules.js` with minimal changes to the main server code to avoid merge conflicts.
+
+### Update submodules:
+
+	cd localsite
+	git pull https://github.com/ModelEarth/localsite main
+	cd ../team
+	git pull https://github.com/modelearth/team main
+	cd ../realitystream
+	git pull https://github.com/modelearth/realitystream main
+	cd ../feed
+	git pull https://github.com/modelearth/feed feed main
+
+
+### Code Toggle
+
+When you type "Code Toggle", Claude will automatically insert or remove the following code snippets to avoid merge conflicts with the parent repo.
+
+#### server/index.js
+Insert between the express.static middleware and the root route handler:
+
+```javascript
+  // Serve submodule directories (optional - see ../submodules.js)
+  try {
+    const { addSubmoduleStatic } = require('../submodules.js');
+    addSubmoduleStatic(app);
+  } catch (e) {
+    // Submodules not configured - continue normally
+  }
+```
+
+**Target location**: After `});` that closes `express.static()` and before `app.use("/", function (_, response) {`
+
 ## Architecture
 
 ### Server Structure (`/server`)
