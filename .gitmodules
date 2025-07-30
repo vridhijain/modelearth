@@ -20,3 +20,6 @@
 [submodule "comparison"]
 	path = comparison
 	url = https://github.com/modelearth/comparison
+[submodule "codechat"]
+	path = codechat
+	url = https://github.com/ModelEarth/codechat
