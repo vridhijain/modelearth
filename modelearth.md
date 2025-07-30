@@ -23,16 +23,18 @@ First have Claude include our static submodules using cmds in claude.md:
 
 	Install or update submodules
 
-Run once to add and again to remove
+Run once to add small changes in the anything-llm parent repo code. These reside in claude.md.
 
 	Code Insert
 
-When restoring to sync with the parent repo
+Avoid checking in changes to the anything-llm parent repo code.
+
+Revert when you need to sync with updates in the anything-llm parent repo:
 
 	Code Remove
 	git pull origin master
 	Code Insert
-	# To finish, run "Example update script" from "Bare Metal" tab
+	# To finish, run "Example update script" from "Bare Metal" tab above.
 
 ### Site Install
 
@@ -63,3 +65,7 @@ Migrate and prepare database, boot server in production and in another collectio
 	cd collector && NODE_ENV=production node index.js & cd ..
 
 View at [localhost:3001](http://localhost:3001)
+
+Restart the server quickly in a couple seconds:
+
+	restart

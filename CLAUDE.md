@@ -75,6 +75,13 @@ yarn prisma:reset           # Reset database and re-migrate
 	git pull https://github.com/modelearth/feed feed main
 
 
+### Quick Commands
+
+When you type "restart", run this single command to restart the server in seconds:
+```bash
+cd $(git rev-parse --show-toplevel) && pkill -f "node.*index.js"; (cd server && NODE_ENV=production nohup node index.js > /dev/null 2>&1 &)
+```
+
 ### Code Insert / Code Remove
 
 Use "Code Insert" to add development code snippets, or "Code Remove" to remove them. This helps avoid merge conflicts with the parent repo.
@@ -106,6 +113,16 @@ server
 ```
 
 **Target location**: Append to the end of `.gitignore` file
+
+#### server/utils/boot/MetaGenerator.js
+Add before `</head>` closing tag in the HTML template:
+
+```html
+<link type="text/css" rel="stylesheet" href="/localsite/css/base.css" id="/localsite/css/base.css" />
+<script type="text/javascript" src="/localsite/js/localsite.js?showheader=true&showsearch=true"></script>
+```
+
+**Target location**: Insert before `</head>` in the HTML template around line 225
 
 ## Architecture
 
