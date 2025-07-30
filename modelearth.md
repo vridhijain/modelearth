@@ -29,7 +29,7 @@ Run once to add small changes in the anything-llm parent repo code. These reside
 
 Avoid checking in changes to the anything-llm parent repo code.
 
-Revert when you need to sync with updates in the anything-llm parent repo:
+**Skip for now** Revert when you need to sync with updates in the anything-llm parent repo:
 
 	Code Remove
 	git pull origin master
@@ -49,6 +49,8 @@ In Claude CLI run:
 	use it via an absolute filesystem path with no trailing slash.
 
 <!-- #5 in BARE_METAL.md -->
+
+Skip if you are on localhost
 
 	Select one of the VITE_BASE_API options in frontend/.env based on the current hosting URL.
 

@@ -55,7 +55,7 @@ yarn prisma:reset            # Reset database and re-migrate
 | realitystream | https://github.com/modelearth/realitystream | ML Models |
 | feed | https://github.com/modelearth/feed | FeedPlayer video/gallery |
 | swiper | https://github.com/modelearth/swiper | UI swiper components |
-| comparison | https://github.com/modelearth/comparison | Comparison tools |
+| comparison | https://github.com/modelearth/comparison | Trade Flow tools |
 
 <br>
 
@@ -77,6 +77,11 @@ git commit -m "Add ModelEarth submodules"
 git submodule foreach 'git pull origin main || git pull origin master'
 ```
 
+### Deploy all submodules:
+```bash
+git submodule foreach 'git add . && git commit -m "Deploy updates" && (git push origin main || git push origin master)'
+```
+
 
 ### Quick Commands
 
@@ -87,7 +92,7 @@ cd $(git rev-parse --show-toplevel) && pkill -f "node.*index.js"; (cd server && 
 
 ### Code Insert / Code Remove
 
-Use "Code Insert" to add development code snippets, or "Code Remove" to remove them. This helps avoid merge conflicts with the parent repo.
+Use "Code Insert" to add development code snippets, or "Code Remove" to remove them. This helps avoid merge conflicts with the parent repo. Include adding and removing from .gitignore.
 
 #### server/index.js
 Insert between the express.static middleware and the root route handler:
