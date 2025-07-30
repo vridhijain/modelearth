@@ -87,6 +87,14 @@ if (process.env.NODE_ENV !== "development") {
     })
   );
 
+  // Serve submodule directories (optional - see ../submodules.cjs)
+  try {
+    const { addSubmoduleStatic } = require('../submodules.cjs');
+    addSubmoduleStatic(app);
+  } catch (e) {
+    console.log('Submodules not configured - continue normally. Error:', e.message);
+  }
+
   app.use("/", function (_, response) {
     IndexPage.generate(response);
     return;

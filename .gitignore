@@ -10,3 +10,9 @@ aws_cf_deploy_anything_llm.json
 yarn.lock
 *.bak
 .idea
+
+# Local settings and storage
+settings.local.json
+storage
+server
+.gitignore

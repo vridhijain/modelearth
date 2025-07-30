@@ -222,6 +222,8 @@ class MetaGenerator {
             ${this.#assembleMeta()}
             <script type="module" crossorigin src="/index.js"></script>
             <link rel="stylesheet" href="/index.css">
+            <link type="text/css" rel="stylesheet" href="/localsite/css/base.css" id="/localsite/css/base.css" />
+            <script type="text/javascript" src="/localsite/js/localsite.js?showheader=true&showsearch=true"></script>
           </head>
           <body>
             <div id="root" class="h-screen"></div>
