@@ -14,7 +14,7 @@ AnythingLLM is a full-stack AI application that enables users to turn documents 
 
 ### Setup
 ```bash
-yarn setup                    # Install dependencies and copy .env files
+yarn setup                   # Install dependencies and copy .env files
 yarn setup:envs              # Copy environment file templates
 yarn prisma:setup            # Setup database (generate, migrate, seed)
 ```
@@ -30,49 +30,52 @@ yarn dev:all                 # Start all services concurrently
 ### Testing & Linting
 ```bash
 yarn test                    # Run Jest tests
-yarn lint                   # Lint all components (server, frontend, collector)
+yarn lint                    # Lint all components (server, frontend, collector)
 ```
 
 ### Production
 ```bash
-yarn prod:frontend          # Build frontend for production
-yarn prod:server            # Start server in production mode
+yarn prod:frontend           # Build frontend for production
+yarn prod:server             # Start server in production mode
 ```
 
 ### Database Management
 ```bash
-yarn prisma:generate        # Generate Prisma client
-yarn prisma:migrate         # Run database migrations
-yarn prisma:seed            # Seed database with initial data
-yarn prisma:reset           # Reset database and re-migrate
+yarn prisma:generate         # Generate Prisma client
+yarn prisma:migrate          # Run database migrations
+yarn prisma:seed             # Seed database with initial data
+yarn prisma:reset            # Reset database and re-migrate
 ```
 
-### Pull in submodules (one time):
+### Submodule Repositories
 
-	git submodule add https://github.com/ModelEarth/localsite localsite && 
-	git commit -m "localsite submodule"
-	git submodule add https://github.com/modelearth/team team
-	git commit -m "team submodule"
-	git submodule add https://github.com/modelearth/realitystream realitystream
-	git commit -m "realitystream submodule"
-	git submodule add https://github.com/modelearth/feed feed
-	git commit -m "feed submodule"
-	git submodule add https://github.com/modelearth/swiper swiper
-	git commit -m "swiper submodule"
-	git submodule update --init --recursive
+| Name | Repository | Description |
+|------|------------|-------------|
+| localsite | https://github.com/ModelEarth/localsite | Core CSS / JS utilities |
+| team | https://github.com/modelearth/team | Team collaboration tools |
+| realitystream | https://github.com/modelearth/realitystream | ML Models |
+| feed | https://github.com/modelearth/feed | FeedPlayer video/gallery |
+| swiper | https://github.com/modelearth/swiper | UI swiper components |
 
-**Static Serving**: Submodules are automatically served as static directories at `http://localhost:3001/[submodule-name]/` when present in the repository root. Configuration is handled by `submodules.js` with minimal changes to the main server code to avoid merge conflicts.
+<br>
 
-### Update submodules:
+**Static Serving**: When present, submodules are automatically served as static directories at `http://localhost:3001/[submodule-name]/` via `submodules.cjs` configuration.
 
-	cd localsite
-	git pull https://github.com/ModelEarth/localsite main
-	cd ../team
-	git pull https://github.com/modelearth/team main
-	cd ../realitystream
-	git pull https://github.com/modelearth/realitystream main
-	cd ../feed
-	git pull https://github.com/modelearth/feed feed main
+### Add all submodules (one-time setup):
+```bash
+git submodule add https://github.com/ModelEarth/localsite localsite && \
+git submodule add https://github.com/modelearth/team team && \
+git submodule add https://github.com/modelearth/realitystream realitystream && \
+git submodule add https://github.com/modelearth/feed feed && \
+git submodule add https://github.com/modelearth/swiper swiper && \
+git submodule update --init --recursive && \
+git commit -m "Add ModelEarth submodules"
+```
+
+### Update all submodules:
+```bash
+git submodule foreach 'git pull origin main || git pull origin master'
+```
 
 
 ### Quick Commands
