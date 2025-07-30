@@ -57,6 +57,8 @@ yarn prisma:reset           # Reset database and re-migrate
 	git commit -m "realitystream submodule"
 	git submodule add https://github.com/modelearth/feed feed
 	git commit -m "feed submodule"
+	git submodule add https://github.com/modelearth/swiper swiper
+	git commit -m "swiper submodule"
 	git submodule update --init --recursive
 
 **Static Serving**: Submodules are automatically served as static directories at `http://localhost:3001/[submodule-name]/` when present in the repository root. Configuration is handled by `submodules.js` with minimal changes to the main server code to avoid merge conflicts.
@@ -73,9 +75,9 @@ yarn prisma:reset           # Reset database and re-migrate
 	git pull https://github.com/modelearth/feed feed main
 
 
-### Code Toggle
+### Code Insert / Code Remove
 
-When you type "Code Toggle", Claude will automatically insert or remove the following code snippets to avoid merge conflicts with the parent repo.
+Use "Code Insert" to add development code snippets, or "Code Remove" to remove them. This helps avoid merge conflicts with the parent repo.
 
 #### server/index.js
 Insert between the express.static middleware and the root route handler:
@@ -86,11 +88,24 @@ Insert between the express.static middleware and the root route handler:
     const { addSubmoduleStatic } = require('../submodules.js');
     addSubmoduleStatic(app);
   } catch (e) {
-    // Submodules not configured - continue normally
+    console.log('Submodules not configured - continue normally. Error:', e.message);
   }
 ```
 
 **Target location**: After `});` that closes `express.static()` and before `app.use("/", function (_, response) {`
+
+#### .gitignore
+Add to the end of the file (avoiding duplicates):
+
+```
+# Local settings and storage
+settings.local.json
+storage
+server
+.gitignore
+```
+
+**Target location**: Append to the end of `.gitignore` file
 
 ## Architecture
 

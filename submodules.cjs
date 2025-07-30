@@ -1,10 +1,9 @@
 /**
  * Submodule Static Server Configuration
  * This file dynamically serves submodule directories as static content
- * without modifying the main server/index.js file
+ * Lines are inserted into server/index.js file by Claude with "code insert" and "code toggle"
  */
 
-const express = require('express');
 const path = require('path');
 const fs = require('fs');
 
@@ -13,7 +12,8 @@ const SUBMODULES = [
   'localsite',
   'team', 
   'realitystream',
-  'feed'
+  'feed',
+  'swiper'
 ];
 
 /**
@@ -24,6 +24,7 @@ function addSubmoduleStatic(app) {
   SUBMODULES.forEach(submodule => {
     const submodulePath = path.resolve(__dirname, submodule);
     if (fs.existsSync(submodulePath)) {
+      const express = require('./server/node_modules/express');
       app.use(`/${submodule}`, express.static(submodulePath));
       console.log(`[Submodules] Serving /${submodule} from ${submodulePath}`);
     } else {

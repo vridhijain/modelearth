@@ -19,6 +19,23 @@ WindowsOS
 For Claude: We've forked the anything-llm repo created by Mintplex Labs and renamed it [earthscape](https://github.com/modelearth/earthscape). Here's their documentation: [docs.anythingllm.com](https://docs.anythingllm.com/)
 
 
+First have Claude include our static submodules using cmds in claude.md:
+
+	Install or update submodules
+
+Run once to add and again to remove
+
+	Code Insert
+
+When restoring to sync with the parent repo
+
+	Code Remove
+	git pull origin master
+	Code Insert
+	# To finish, run "Example update script" from "Bare Metal" tab
+
+### Site Install
+
 In Claude CLI run:
 
 	yarn setup with 10 minute timeout
@@ -42,14 +59,7 @@ Migrate and prepare database, boot server in production and in another collectio
 
 	cd server && npx prisma generate --schema=./prisma/schema.prisma
 	cd server && npx prisma migrate deploy --schema=./prisma/schema.prisma
-	cd server && NODE_ENV=production node index.js &
+	cd server && NODE_ENV=production node index.js & cd ..
 	cd collector && NODE_ENV=production node index.js & cd ..
-
-	Add to .gitignore: settings.local.json, storage
-	
-Claude will use the cmds in claude.md
-
-	Install or update submodules
-
 
 View at [localhost:3001](http://localhost:3001)
