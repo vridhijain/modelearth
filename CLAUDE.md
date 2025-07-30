@@ -56,6 +56,7 @@ yarn prisma:reset            # Reset database and re-migrate
 | feed | https://github.com/modelearth/feed | FeedPlayer video/gallery |
 | swiper | https://github.com/modelearth/swiper | UI swiper components |
 | comparison | https://github.com/modelearth/comparison | Trade Flow tools |
+| codechat | https://github.com/ModelEarth/codechat | Code chat interface |
 
 <br>
 
@@ -68,6 +69,7 @@ git submodule add https://github.com/modelearth/realitystream realitystream && \
 git submodule add https://github.com/modelearth/feed feed && \
 git submodule add https://github.com/modelearth/swiper swiper && \
 git submodule add https://github.com/modelearth/comparison comparison && \
+git submodule add https://github.com/ModelEarth/codechat codechat && \
 git submodule update --init --recursive && \
 git commit -m "Add ModelEarth submodules"
 ```

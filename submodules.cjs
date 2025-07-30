@@ -13,7 +13,8 @@ const SUBMODULES = [
   'realitystream',
   'feed',
   'swiper',
-  'comparison'
+  'comparison',
+  'codechat'
 ];
 
 /**
