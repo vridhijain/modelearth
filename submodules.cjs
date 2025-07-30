@@ -10,10 +10,10 @@ const fs = require('fs');
 // List of submodules to serve as static directories
 const SUBMODULES = [
   'localsite',
-  'team', 
   'realitystream',
   'feed',
-  'swiper'
+  'swiper',
+  'comparison'
 ];
 
 /**

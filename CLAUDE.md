@@ -52,10 +52,10 @@ yarn prisma:reset            # Reset database and re-migrate
 | Name | Repository | Description |
 |------|------------|-------------|
 | localsite | https://github.com/ModelEarth/localsite | Core CSS / JS utilities |
-| team | https://github.com/modelearth/team | Team collaboration tools |
 | realitystream | https://github.com/modelearth/realitystream | ML Models |
 | feed | https://github.com/modelearth/feed | FeedPlayer video/gallery |
 | swiper | https://github.com/modelearth/swiper | UI swiper components |
+| comparison | https://github.com/modelearth/comparison | Comparison tools |
 
 <br>
 
@@ -64,10 +64,10 @@ yarn prisma:reset            # Reset database and re-migrate
 ### Add all submodules (one-time setup):
 ```bash
 git submodule add https://github.com/ModelEarth/localsite localsite && \
-git submodule add https://github.com/modelearth/team team && \
 git submodule add https://github.com/modelearth/realitystream realitystream && \
 git submodule add https://github.com/modelearth/feed feed && \
 git submodule add https://github.com/modelearth/swiper swiper && \
+git submodule add https://github.com/modelearth/comparison comparison && \
 git submodule update --init --recursive && \
 git commit -m "Add ModelEarth submodules"
 ```
