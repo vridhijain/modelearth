@@ -52,7 +52,7 @@ In Claude CLI run:
 
 	Select one of the VITE_BASE_API options in frontend/.env based on the current hosting URL.
 
-Start site after building and copying dist into server/public
+Build and copy dist into server/public
 
 	cd frontend && yarn build
 	cd .. && mkdir -p server/public && cp -R frontend/dist/* server/public/
