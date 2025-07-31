@@ -10,6 +10,10 @@ AnythingLLM (with ModelEarth submodules) is a full-stack AI application that ena
 - **Server**: Node.js/Express API server handling LLM interactions and document management  
 - **Collector**: Node.js service for processing and parsing documents
 
+## Server setup shortcut
+
+Run "server setup" to invoke the steps in the setup.md file.
+
 ## Development Commands
 
 ### Setup
