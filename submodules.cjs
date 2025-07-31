@@ -14,7 +14,10 @@ const SUBMODULES = [
   'feed',
   'swiper',
   'comparison',
-  'codechat'
+  'codechat',
+  'home',
+  'cloud',
+  'projects'
 ];
 
 /**
