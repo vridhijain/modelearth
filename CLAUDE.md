@@ -106,7 +106,10 @@ cd $(git rev-parse --show-toplevel) && pkill -f "node.*index.js"; (cd server && 
 
 Use "Code Insert" to add development code snippets, or "Code Remove" to remove them. This helps avoid merge conflicts with the parent repo. Include adding and removing from .gitignore.
 
-# TODO: Rename Whitelabeling to Customization, rename White-label to customize
+#### frontend/src/locales/en/common.js, frontend/src/locales/de/common.js and frontend/src/locales/pl/common.js
+
+Replace "Whitelabeling" with "Custom Labels"
+Replace "White-label" with "Custom-label"
 
 #### server/index.js
 Insert between the express.static middleware and the root route handler:
