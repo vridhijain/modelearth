@@ -23,3 +23,9 @@
 [submodule "codechat"]
 	path = codechat
 	url = https://github.com/ModelEarth/codechat
+[submodule "home"]
+	path = home
+	url = https://github.com/ModelEarth/home
+[submodule "cloud"]
+	path = cloud
+	url = https://github.com/ModelEarth/cloud
