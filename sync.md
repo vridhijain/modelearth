@@ -1,4 +1,4 @@
-## Code Insert and Code Remove - For Syncing with Parent Repo
+## “Code Insert” and “Code Remove” - For Syncing with Parent Repo
 
 Loren runs "Code Remove" occasionally in Claude before syncing the modelearth fork with Anything LLM.
 
