@@ -1,9 +1,13 @@
+Update browserslist
+
+	npx update-browserslist-db@latest
+
 <!-- Create a "storage" folder is #4 in BARE_METAL.md -->
 
 	yarn setup with 10 minute timeout
-	cp server/.env.example server/.env
+	cp -n server/.env.example server/.env (skip if server/.env exists)
 
-	Create a "storage" folder and set the STORAGE_DIR path in server/.env to
+	Create a "storage" folder if it doesn't exist and set the STORAGE_DIR path in server/.env to
 	use it via an absolute filesystem path with no trailing slash.
 
 <!-- #5 in BARE_METAL.md -->
@@ -22,3 +26,7 @@ Then migrate and prepare database, boot server in production and in another coll
 	cd server && npx prisma migrate deploy --schema=./prisma/schema.prisma
 	cd server && NODE_ENV=production node index.js & cd ..
 	cd collector && NODE_ENV=production node index.js & cd ..
+
+Restart the server to avoid MIME type errors:
+
+	cd $(git rev-parse --show-toplevel) && pkill -f "node.*index.js"; (cd server && NODE_ENV=production nohup node index.js > /dev/null 2>&1 &)
