@@ -17,7 +17,7 @@ WindowsOS
 	npx @anthropic-ai/claude-code
 
 
-Have Claude refresh our submodules:
+Have Claude refresh our submodules. Here's an overview of [modelearth submodules](codechat/).
 
 	Update submodules
 
@@ -34,10 +34,9 @@ Restart the server quickly, in a couple seconds:
 
 	restart
 
-We're making minimum changes in the Anything-llm parent repo code.  
-If small changes are made, include in the Insert and Remove process within claude.md
-
-If you modify claude.md to update small snippets, run (try to avoid this). [Our sync cmds](https://github.com/ModelEarth/modelearth/blob/master/sync.md)
+**Infrequently...**
+We're aiming to avoid making changes in the Anything-llm parent repo code. [We rollback to sync](https://github.com/ModelEarth/modelearth/blob/master/sync.md).
+If small changes are needed, apply them using the Insert and Remove process within claude.md, then run:
 
 	reload claude.md, build, deploy
 
