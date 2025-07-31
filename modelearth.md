@@ -36,3 +36,8 @@ Restart the server quickly, in a couple seconds:
 
 We're making minimum changes in the Anything-llm parent repo code.  
 If small changes are made, include in the Insert and Remove process within claude.md
+
+If you modify claude.md to update small snippets, run (try to avoid this). [Our sync cmds](https://github.com/ModelEarth/modelearth/blob/master/sync.md)
+
+	reload claude.md, build, deploy
+
