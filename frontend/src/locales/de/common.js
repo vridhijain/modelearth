@@ -81,7 +81,7 @@ const TRANSLATIONS = {
     "workspace-chats": "Workspace-Chats",
     customization: "Personalisierung",
     interface: "UI-Einstellungen",
-    branding: "Branding & Whitelabeling",
+    branding: "Branding & Custom Labels",
     chat: "Chat",
     "api-keys": "Entwickler-API",
     llm: "LLM",
@@ -453,7 +453,7 @@ const TRANSLATIONS = {
       description: "Passen Sie die Benutzeroberfläche von AnythingLLM an.",
     },
     branding: {
-      title: "Branding & Whitelabeling",
+      title: "Branding & Custom Labels",
       description:
         "Individualisieren Sie Ihre AnythingLLM-Instanz durch eigenes Branding.",
     },
