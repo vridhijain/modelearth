@@ -29,3 +29,6 @@
 [submodule "cloud"]
 	path = cloud
 	url = https://github.com/ModelEarth/cloud
+[submodule "projects"]
+	path = projects
+	url = https://github.com/ModelEarth/projects
