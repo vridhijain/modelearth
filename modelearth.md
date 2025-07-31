@@ -2,7 +2,7 @@
 
 A location-enabled install of [Anything LLM](https://anythingllm.com).
 
-Start a virtual environment with Claude Code CLI in the modelearth folder.
+First start a virtual environment with Claude Code CLI in the modelearth folder.
 
 MacOS
 
@@ -17,7 +17,7 @@ WindowsOS
 	npx @anthropic-ai/claude-code
 
 
-First have Claude refresh our submodules using cmds in claude.md:
+Have Claude refresh our submodules:
 
 	Update submodules
 
