@@ -1,8 +1,8 @@
-# EarthScape
+# ModelEarth
 
 A location-enabled install of [Anything LLM](https://anythingllm.com).
 
-Start a virtual environment with Claude Code CLI in this earthscape folder.
+Start a virtual environment with Claude Code CLI in the modelearth folder.
 
 MacOS
 
@@ -16,12 +16,10 @@ WindowsOS
 	env\Scripts\activate
 	npx @anthropic-ai/claude-code
 
-For Claude: We've forked the anything-llm repo created by Mintplex Labs and renamed it [earthscape](https://github.com/modelearth/earthscape). Here's their documentation: [docs.anythingllm.com](https://docs.anythingllm.com/)
 
+First have Claude refresh our submodules using cmds in claude.md:
 
-First have Claude include our static submodules using cmds in claude.md:
-
-	Install or update submodules
+	Update submodules
 
 Run once to add small changes in the anything-llm parent repo code. These reside in claude.md.
 
@@ -68,6 +66,6 @@ Migrate and prepare database, boot server in production and in another collectio
 
 View at [localhost:3001](http://localhost:3001)
 
-Restart the server quickly in a couple seconds:
+Restart the server quickly, in a couple seconds:
 
 	restart

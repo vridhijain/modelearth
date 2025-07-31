@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-AnythingLLM is a full-stack AI application that enables users to turn documents into chat contexts for LLMs. It's a monorepo with three main components:
+AnythingLLM (with ModelEarth submodules) is a full-stack AI application that enables users to turn documents into chat contexts for LLMs. It's a monorepo with three main components:
 
 - **Frontend**: React/Vite application with chat UI and admin interfaces
 - **Server**: Node.js/Express API server handling LLM interactions and document management  
@@ -77,7 +77,7 @@ git submodule add https://github.com/ModelEarth/home home && \
 git submodule add https://github.com/ModelEarth/cloud cloud && \
 git submodule add https://github.com/ModelEarth/projects projects && \
 git submodule update --init --recursive && \
-git commit -m "Add ModelEarth submodules"
+git commit -m "Add submodules"
 ```
 
 ### Update all submodules:
