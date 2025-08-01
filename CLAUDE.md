@@ -102,6 +102,23 @@ When you type "restart", run this single command to restart the server in second
 cd $(git rev-parse --show-toplevel) && pkill -f "node.*index.js"; (cd server && NODE_ENV=production nohup node index.js > /dev/null 2>&1 &)
 ```
 
+When you type "quick", add the following permissions block to setting.local.json under allow. "
+When you type "confirm" or less quick", remove it:
+```json
+[
+  "Bash(yarn setup)",
+  "Bash(npx update-browserslist-db:*)",
+  "Bash(mkdir:*)",
+  "Bash(yarn build)",
+  "Bash(cp:*)",
+  "Bash(npx prisma generate:*)",
+  "Bash(npx prisma migrate:*)",
+  "Bash(pkill:*)",
+  "Bash(curl:*)",
+  "Bash(git submodule:*)"
+]
+```
+
 ### Code Insert / Code Remove
 
 Use "Code Insert" to add development code snippets, or "Code Remove" to remove them. This helps avoid merge conflicts with the parent repo. Include adding and removing from .gitignore.
