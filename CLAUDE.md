@@ -213,3 +213,8 @@ Add before `</head>` closing tag in the HTML template:
 - `/server/utils/vectorDbProviders/`: Vector database integrations
 - `/frontend/src/components/LLMSelection/`: UI for LLM provider configuration
 - `/collector/utils/extensions/`: Document source connectors
+
+## Memories
+
+- Always omit the lines about clude in Git commits
+- After commiting changes in a submodule, climb out of it into the root
