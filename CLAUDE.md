@@ -93,7 +93,48 @@ git submodule foreach 'git pull origin main || git pull origin master'
 ```bash
 git submodule foreach 'git add . && git commit -m "Deploy updates" && (git push origin main || git push origin master)'
 ```
+**Note**: This only pushes to individual submodules. It does NOT update the upstream parent repository with new submodule references. Use individual "commit [submodule name]" or "PR [submodule name]" for complete workflows.
 
+### PR [submodule name]:
+Create a pull request for a submodule when you lack collaborator privileges:
+```bash
+cd [submodule name]
+git add . && git commit -m "Description of changes"
+git push origin feature-branch-name
+gh pr create --title "Update [submodule name]" --body "Description of changes"
+cd ..
+```
+
+### Submodule Management
+
+#### IMPORTANT: "commit [submodule name]" Command Requirements
+When a user says "commit [submodule name]", you MUST complete ALL these steps in sequence:
+
+1. **Navigate to submodule**: `cd [submodule name]`
+2. **Add and commit in submodule**: `git add . && git commit -m "Description of changes"`
+3. **Push submodule changes**: `git push` 
+4. **Return to parent**: `cd ..`
+5. **Add submodule reference**: `git add [submodule name]`
+6. **Commit parent update**: `git commit -m "Update [submodule name] submodule"`
+7. **Push parent changes**: `git push`
+8. **If no push access**: Submit PR for parent repository instead
+
+**⚠️ CRITICAL**: Steps 5-7 are REQUIRED. Simply committing to the submodule is incomplete - the parent repository must also be updated with the new submodule reference.
+
+#### Quick Commands for Submodules
+- **"commit [submodule name]"**: Complete 8-step workflow above
+- **"push [submodule name]"**: Only push submodule changes (steps 1-3)
+- **"PR [submodule name]"**: Create pull request workflow
+
+#### Additional Notes
+- Allow up to 12 minutes to pull repos (large repositories)
+- Always verify both submodule AND parent repository are updated
+
+### Git Commit Guidelines
+- **NEVER add Claude Code attribution or co-authored-by lines to commits**
+- **NEVER add "🤖 Generated with [Claude Code]" or similar footers**
+- Keep commit messages clean and focused on the actual changes
+- Include a brief summary of changes in the commit text
 
 ### Quick Commands
 
@@ -218,3 +259,4 @@ Add before `</head>` closing tag in the HTML template:
 
 - Always omit the lines about clude in Git commits
 - After commiting changes in a submodule, climb out of it into the root
+- Always push change to the upstream repository, or submit a Pull Request to the upstream repository if the user does not have access to make a push
