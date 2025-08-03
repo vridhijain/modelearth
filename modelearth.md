@@ -23,16 +23,17 @@ Have Claude refresh our submodules. Here's an overview of [modelearth submodules
 
 
 ### Site Install
-
+<div style="float:right"><a href="#baremetal">Run without Claude</a></div>
 In Claude CLI run once:
 
 	server setup
 
-View at [localhost:3001](http://localhost:3001)
-
 Restart the server quickly, in a couple seconds:
 
 	restart
+
+View at [localhost:3001](http://localhost:3001)
+
 
 **Infrequently...**
 We're aiming to avoid making changes in the Anything-llm parent repo code. [We rollback to sync](https://github.com/ModelEarth/modelearth/blob/master/sync.md).
