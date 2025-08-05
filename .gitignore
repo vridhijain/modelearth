@@ -1,6 +1,8 @@
 v-env
 .env
+env
 !.env.example
+codechat/.env
 
 node_modules
 __pycache__
